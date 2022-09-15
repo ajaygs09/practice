@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header">Book Details</div>
+                    <br>
+                    <div>
+                        <input type="text" class="form-control" [(ngModel)]="bookId" placeholder="ID"><br>
+                        <input type="text" class="form-control" [(ngModel)]="bookName" placeholder="Book Name"><br>
+                        <input type="text" class="form-control" [(ngModel)]="author" placeholder="Author"><br>
+                    </div><br>
+                    <div>ID:{{bookId}}</div><br>
+                    <div>Book Name:{{bookName}}</div><br>
+                    <div> Author:{{author}}</div><br>
+                    <div>Available:{{available}}</div><br>
+                    <div>
+                        <button class="btn btn-primary" [disabled]="btnToggle"
+                            (click)="available == 'Available'? available = 'Not Available':available = 'Available';">Toggle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>{{testEmitter | json}}</div>
+<app-list [id]="bookId" (clicks)="testclick($event)"></app-list>

@@ -1,0 +1,25 @@
+<table>
+    <tr>
+        <th> First Name</th>
+        <th> Last Name</th>
+        <th> Age</th>
+        <!-- <th>Class</th> -->
+        <th>Student Id</th>
+        <th>Term 1 Marks</th>
+
+    </tr>
+    <tr *ngFor="let datas of data">
+       
+        <td>{{datas.firstName}}</td>
+        <td>{{datas.lastName}}</td>
+        <td>{{datas.age}}</td>
+        <td>{{datas.studentId}}</td>
+        <td>{{datas?.term1Marks | json}}</td>
+        <!-- <td  *ngFor="let"></td> -->
+
+    </tr>
+</table>
+<p *ngIf="showMe">Test</p>
+<button (click)="showMe=!showMe; clicks.emit(data)">click</button>
+<p>{{id}}</p>
+ 

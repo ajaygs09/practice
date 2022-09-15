@@ -1,0 +1,40 @@
+<div class="">
+    <form action="">
+        <div class="container">
+            <div class="row justify-content-center d-flex flex-column min-vh-100 align-items-center">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-header  text-center">Register</div>
+                            <div class="">
+                                <div class="form-group">
+                                    <label for="">First name</label>
+                                    <input type="text" required="" #name="ngModel" class="form-control" [class.is-invalid]="name.invalid && name.touched"
+                                        placeholder="First name" name="userName" [(ngModel)]="userName" >
+                                </div>
+                                <small class="text-danger"[class.d-none]="name.valid||name.untouched">Name is Required.</small>
+                                <!-- {{name}} -->
+                                <div class="form-group">
+                                    <label for="">Last name</label>
+                                    <input type="text" class="form-control" placeholder="Last name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Mobile no</label>
+                                    <input type="text" class="form-control" placeholder="Mobile No">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="text" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="col text-center">
+                                    <a routerLink="home" routerLinkActive="active" ariaCurrentWhenActive="page"></a>
+                                    <button type="submit" class="btn btn-primary mt-3 btn-block w-100 ">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
