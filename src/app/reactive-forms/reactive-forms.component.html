@@ -37,13 +37,14 @@
                         </div>
                         <div class="form-group">
                             <label for="">Email</label>
-                            <input type="text" class="form-control" formControlName="email" ngModel="email" (input)="eV.validationEmail("email")">
+                            <input type="text" class="form-control" formControlName="email"
+                                (ngModelChange)="eV.validationCheck('email', email?.value)">
+                                <small *ngIf="email?.touched && eV.emailError" class="text-danger">Email is Required</small>
                             <div *ngIf="email?.invalid&& email?.touched">
                                 <!-- <small *ngIf="email?.errors?.['required']" class="text-danger">{{emailRequiredError}}</small> -->
-                                <small class="text-danger"></small>
+                                
                                 <small *ngIf="email?.errors?.['email']"
                                     class="text-danger">{{emailValidError}}</small><br>
-
                             </div>
                         </div>
                         <button class="btn btn-success mt-3 w-100" type="submit"

@@ -6,7 +6,7 @@ import { EmailValidator } from '@angular/forms';
 })
 export class ServiceService {
   constructor() {}
-  emailError = false;
+  emailError = true;
 
   validationEmail(email: any) {
     console.log('ttttttttttttttt', email);
@@ -18,9 +18,10 @@ export class ServiceService {
     return false;
   }
   validationCheck(fieldType: string, fieldValue: any) {
-    console.log(fieldType,fieldValue, "field")
+    console.log(fieldType, fieldValue, 'field');
     if (fieldType == 'email') {
       this.emailError = fieldValue ? false : true;
     }
+    console.log(this.emailError, 'emailError');
   }
 }
