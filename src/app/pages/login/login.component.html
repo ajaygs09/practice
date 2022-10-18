@@ -9,10 +9,11 @@
                             <div class="">
                                 <div class="form-group">
                                     <label for="">First name</label>
-                                    <input type="text" required="" #name="ngModel" class="form-control" [class.is-invalid]="name.invalid && name.touched"
+                                    <input type="text" required="" #name="ngModel" pattern="/^[A-Za-z .]+$/"  class="form-control" [class.is-invalid]="name.invalid && name.touched"
                                         placeholder="First name" name="userName" [(ngModel)]="userName" >
                                 </div>
                                 <small class="text-danger"[class.d-none]="name.valid||name.untouched">Name is Required.</small>
+                                <!-- <small class="text-danger"[class.d-none]="name.pattern||name.untouched">kjhj is Required.</small> -->
                                 <!-- {{name}} -->
                                 <div class="form-group">
                                     <label for="">Last name</label>

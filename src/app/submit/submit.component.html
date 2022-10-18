@@ -1,0 +1,25 @@
+<form action="" class="m-5" [formGroup]="submitForm">
+    <div class="col-4">
+        <label for=""> Name</label>
+        <input type="text" class="form-control" formControlName="firstName">
+        <div *ngIf="submitForm.get('firstName')?.invalid&&submitForm.get('firstName')?.touched">
+            <small *ngIf="submitForm.get('firstName')?.errors?.['required']" class="text-danger">Name is required</small>
+        </div>
+        <label for="">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <div *ngIf="submitForm.get('email')?.invalid&&submitForm.get('email')?.touched">
+            <small *ngIf="submitForm.get('email')?.errors?.['required']" class="text-danger">Email is required</small>
+        </div>
+        <label for="">Phone</label>
+        <input type="text" class="form-control" formControlName="phone">
+        <div *ngIf="submitForm.get('phone')?.invalid&&submitForm.get('phone')?.touched">
+            <small *ngIf="submitForm.get('phone')?.errors?.['required']" class="text-danger">Phone is required</small>
+        </div>
+        <label for="">Amount</label>
+        <input type="text" class="form-control" formControlName="amount">
+        <div *ngIf="submitForm.get('amount')?.invalid&&submitForm.get('amount')?.touched">
+            <small *ngIf="submitForm.get('amount')?.errors?.['required']" class="text-danger">Amount is required</small>
+        </div>
+        <button type="submit" class="btn btn-primary mt-5" (click)="submitData()">Submit</button>
+    </div>
+</form>

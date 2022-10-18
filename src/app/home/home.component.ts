@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,8 @@ export class HomeComponent implements OnInit {
   available = 'Available';
   btnToggle = true;
   testEmitter:any;
-  constructor() {
+  name="ajay";
+  constructor(private redirectPage:Router) {
     /* TODO document why this constructor is empty */
     this.ontoggle()
 
@@ -24,6 +26,7 @@ export class HomeComponent implements OnInit {
       this.btnToggle = false;
     }, 2000);
   }
+  isUnchanged=true;
   ontoggle() {
     //alert(this.available )
 //     if (this.available == 'Available') {
@@ -39,4 +42,8 @@ this.available == 'Available'? this.available = 'Not Available':this.available =
  testclick(val:any){
   this.testEmitter = val;
  }
+ redirect(){
+this.redirectPage.navigate([`/login`])
+ }
+ 
 }

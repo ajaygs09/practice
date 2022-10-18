@@ -23,5 +23,8 @@
         </div>
     </div>
 </div>
+<button (click)="redirect()">Redirect</button>
+<p>{{name}}</p>
+<button type="button" [disabled]="isUnchanged">Disabled Button</button>
 <div>{{testEmitter | json}}</div>
 <app-list [id]="bookId" (clicks)="testclick($event)"></app-list>
